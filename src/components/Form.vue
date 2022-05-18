@@ -8,6 +8,9 @@
         v-model="title"
         :class="isTitleSelected && 'selected'"
         @click="toggleSelection(true, false, false)"
+        @focus="toggleSelection(true, false, false)"
+        @blur="toggleSelection(false, false, false)"
+        ref="title"
       />
     </div>
     <div>      
@@ -18,6 +21,8 @@
         v-model="description"
         :class="isDescriptionSelected && 'selected'"
         @click="toggleSelection(false, true, false)"
+        @focus="toggleSelection(false, true, false)"
+        ref="description"
       />
     </div>
     <div>
@@ -28,9 +33,11 @@
         v-model="link"
         :class="isLinkSelected && 'selected'"
         @click="toggleSelection(false, false, true)"
+        @focus="toggleSelection(false, false, true)"
+        ref="link"
       />
     </div>
-    <button>Add Resource</button>
+    <button @focus="toggleSelection(false, false, false)">Add Resource</button>
   </form>
 </template>
 
@@ -40,7 +47,10 @@ export default {
     return {
       isTitleSelected: false,
       isDescriptionSelected: false,
-      isLinkSelected: false
+      isLinkSelected: false,
+      title: '',
+      description: '',
+      link: ''
     }
   },
   methods: {
@@ -108,6 +118,6 @@ button:hover {
 }
 
 .selected {
-  background-color: rgb(225, 201, 225)
+  background-color: rgb(225, 201, 225);
 }
 </style>
