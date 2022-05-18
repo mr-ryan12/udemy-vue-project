@@ -1,17 +1,36 @@
 <template>
   <Header/>
+  <ResourcesMenu/>
+  <Resources/>
 </template>
 
 <script>
 import Header from './components/Header'
+import ResourcesMenu from './components/ResourcesMenu.vue'
+import Resources from './components/Resources.vue'
 
 export default {
   components: {
-    Header
+    Header,
+    ResourcesMenu,
+    Resources
   },
   data() {
     return {
-
+      resources: [
+        {
+          id: 1,
+          title: 'Official Vue Guide',
+          description: 'The official Vue.js documentation',
+          link: 'https://vuejs.org/'
+        },
+        {
+          id: 2,
+          title: 'Google',
+          description: 'Learn to google...',
+          link: 'https://google.org/'
+        }
+      ]
     }
   }
 }
@@ -20,6 +39,13 @@ export default {
 <style>
 * {
   margin: 0;
+}
+#app {
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 </style>
