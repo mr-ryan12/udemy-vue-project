@@ -3,7 +3,7 @@
     <section class="resource-card" v-for="resource in resources" :key="resource.id">
       <section class="card-header">
         <h2>{{ resource.title }}</h2>
-        <button>Delete</button>
+        <button @click="deleteResource(resource.id)">Delete</button>
       </section>
       <br>
       <p>{{ resource.description }}</p>
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  inject: ['resources']
+  inject: ['resources', 'deleteResource']
 }
 </script>
 

@@ -52,6 +52,10 @@ export default {
       this.addButtonSelected = isAddButtonActive
       this.toggleComponent(component)
       console.log(this.storedButtonSelected)
+    },
+    deleteResource(id) {
+      const foundIndex = this.resources.findIndex(resource => resource.id === id)
+      this.resources.splice(foundIndex, 1)
     }
   },
   provide() {
@@ -59,7 +63,8 @@ export default {
       resources: this.resources,
       addResource: this.addResource,
       toggleComponent: this.toggleComponent,
-      resetButtonSelection: this.toggleButtonSelection
+      resetButtonSelection: this.toggleButtonSelection,
+      deleteResource: this.deleteResource
     }
   }
 }
