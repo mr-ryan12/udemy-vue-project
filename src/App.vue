@@ -51,7 +51,6 @@ export default {
       this.storedButtonSelected = isStoredButtonActive
       this.addButtonSelected = isAddButtonActive
       this.toggleComponent(component)
-      console.log(this.storedButtonSelected)
     },
     deleteResource(id) {
       const foundIndex = this.resources.findIndex(resource => resource.id === id)
