@@ -6,7 +6,6 @@
         type="text"
         id="title"
         v-model="title"
-        placeholder="Title"
       />
     </div>
     <div>      
@@ -15,7 +14,6 @@
         type="text"
         id="description"
         v-model="description"
-        placeholder="Description"
       />
     </div>
     <div>
@@ -24,7 +22,6 @@
         type="text"
         id="link"
         v-model="link"
-        placeholder="Link"
       />
     </div>
     <button>Add Resource</button>
@@ -83,5 +80,9 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+#title {
+  background-color: rgb(225, 201, 225)
 }
 </style>
