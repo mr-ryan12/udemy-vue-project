@@ -1,8 +1,8 @@
 <template>
   <section class="resources-container">
     <section class="button-container">
-      <button :class="toggleStoredButtonStyling" @click="toggleSelection(true, false)">Stored Resources</button>
-      <button :class="toggleAddButtonStyling" @click="toggleSelection(false, true)">Add Resources</button>
+      <button :class="toggleStoredButtonStyling" @click="toggleSelection(true, false, 'Resources')">Stored Resources</button>
+      <button :class="toggleAddButtonStyling" @click="toggleSelection(false, true, 'Form')">Add Resources</button>
     </section>
   </section>
 </template>
@@ -16,9 +16,10 @@
       }
     },
     methods: {
-      toggleSelection(isStoredButtonActive, isAddButtonActive) {
+      toggleSelection(isStoredButtonActive, isAddButtonActive, component) {
         this.storedButtonSelected = isStoredButtonActive
         this.addButtonSelected = isAddButtonActive
+        this.$emit('toggle-component', component)
       }
     },
     computed: {

@@ -1,8 +1,10 @@
 <template>
   <section class="main-app">
-    <Header/>
-    <ResourcesMenu/>
-    <Resources :resources="resources"/>
+    <Header />
+    <ResourcesMenu @toggle-component="toggleComponent" />
+    <!-- <Resources :resources="resources"/>
+    <Form/> -->
+    <component :is="selectedComponent"></component>
   </section>
 </template>
 
@@ -10,12 +12,14 @@
 import Header from './components/Header'
 import ResourcesMenu from './components/ResourcesMenu.vue'
 import Resources from './components/Resources.vue'
+import Form from './components/Form.vue'
 
 export default {
   components: {
     Header,
     ResourcesMenu,
-    Resources
+    Resources,
+    Form
   },
   data() {
     return {
@@ -32,7 +36,18 @@ export default {
           description: 'Learn to google...',
           link: 'https://google.org/'
         }
-      ]
+      ],
+      selectedComponent: 'Resources'
+    }
+  },
+  methods: {
+    toggleComponent(component) {
+      this.selectedComponent = component
+    }
+  },
+  provide() {
+    return {
+      resources: this.resources
     }
   }
 }
