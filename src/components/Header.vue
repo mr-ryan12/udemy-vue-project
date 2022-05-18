@@ -1,0 +1,16 @@
+<template>
+  <h1>Remember Me</h1>
+</template>
+
+<style scoped>
+h1 {
+  width: 100vw;
+  height: 8vh;
+  background-color: #640032;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: bold;
+}
+</style>
