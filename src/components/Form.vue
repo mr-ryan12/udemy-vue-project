@@ -1,4 +1,5 @@
 <template>
+  <ErrorModal v-if="error"/>
   <form @submit.prevent="handleSubmit">
     <div>
       <label for="title" class="title-label">Title</label>
@@ -42,7 +43,12 @@
 </template>
 
 <script>
+import ErrorModal from './ErrorModal.vue'
+
 export default {
+  components: {
+    ErrorModal
+  },
   data() {
     return {
       isTitleSelected: false,
@@ -50,7 +56,8 @@ export default {
       isLinkSelected: false,
       title: '',
       description: '',
-      link: ''
+      link: '',
+      error: false
     }
   },
   methods: {
@@ -60,14 +67,22 @@ export default {
       this.isLinkSelected = isLink
     },
     handleSubmit() {
-      const newResource = {
-        id: Date.now(),
-        title: this.title,
-        description: this.description,
-        link: this.link
+      this.checkInputs()
+      if (!this.error) {
+        const newResource = {
+          id: Date.now(),
+          title: this.title,
+          description: this.description,
+          link: this.link
+        }
+        this.addResource(newResource)
+        this.resetButtonSelection(true, false, 'Resources')
       }
-      this.addResource(newResource)
-      this.resetButtonSelection(true, false, 'Resources')
+    },
+    checkInputs() {
+      if (!this.title || !this.link || !this.description) {
+        this.error = true
+      }
     }
   },
   inject: ['addResource', 'toggleComponent', 'resetButtonSelection']
