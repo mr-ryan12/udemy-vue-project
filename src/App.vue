@@ -3,7 +3,6 @@
     <Header />
     <ResourcesMenu @toggle-button-selection="toggleButtonSelection" :stored-button-selected="storedButtonSelected" :add-button-selected="addButtonSelected"/>
     <component :is="selectedComponent"></component>
-    <h2 v-if="!resources.length">This list is empty :(</h2>
   </section>
 </template>
 
@@ -87,5 +86,9 @@ export default {
   align-items: center;
   height: 100vh;
   width: 100vw;
+}
+
+button {
+  cursor: pointer;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <h1>Remember Me</h1>
+  <h1>Udemy Vue Project</h1>
 </template>
 
 <style scoped>

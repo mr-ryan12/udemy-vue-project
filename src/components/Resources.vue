@@ -9,6 +9,7 @@
       <p>{{ resource.description }}</p>
       <a :href="resource.link" target="_blank">View Resource</a>
     </section>
+    <h2 v-if="!resources.length" class="empty-container-message">This list is empty :(</h2>
   </section>
 </template>
 
@@ -55,5 +56,9 @@ a {
 
 a:hover {
   color: #eda36a
+}
+
+.empty-container-message {
+  text-align: center;
 }
 </style>
