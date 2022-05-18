@@ -1,5 +1,5 @@
 <template>
-  <ErrorModal v-if="error"/>
+  <ErrorModal v-if="error" @close-modal="closeModal" />
   <form @submit.prevent="handleSubmit">
     <div>
       <label for="title" class="title-label">Title</label>
@@ -83,6 +83,9 @@ export default {
       if (!this.title || !this.link || !this.description) {
         this.error = true
       }
+    },
+    closeModal() {
+      this.error = false
     }
   },
   inject: ['addResource', 'toggleComponent', 'resetButtonSelection']

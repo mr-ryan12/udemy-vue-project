@@ -6,10 +6,18 @@
       <p>
         Please check all inputs and make sure you enter at least a few characters into each input field
       </p>
-      <button>Okay</button>
+      <button @click="$emit('close-modal')">Okay</button>
     </section>
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    closeModal: Function
+  }
+}
+</script>
 
 <style scoped>
 .modal-container {

@@ -7,7 +7,7 @@
       </section>
       <br>
       <p>{{ resource.description }}</p>
-      <a :href="resource.link">View Resource</a>
+      <a :href="resource.link" target="_blank">View Resource</a>
     </section>
   </section>
 </template>
