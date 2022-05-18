@@ -2,8 +2,6 @@
   <section class="main-app">
     <Header />
     <ResourcesMenu @toggle-component="toggleComponent" />
-    <!-- <Resources :resources="resources"/>
-    <Form/> -->
     <component :is="selectedComponent"></component>
   </section>
 </template>

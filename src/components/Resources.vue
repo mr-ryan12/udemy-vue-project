@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .resource-cards-container {
   margin-top: 5vh;
   width: 41%;
