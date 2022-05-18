@@ -6,6 +6,8 @@
         type="text"
         id="title"
         v-model="title"
+        :class="isTitleSelected && 'selected'"
+        @click="toggleSelection(true, false, false)"
       />
     </div>
     <div>      
@@ -14,6 +16,8 @@
         type="text"
         id="description"
         v-model="description"
+        :class="isDescriptionSelected && 'selected'"
+        @click="toggleSelection(false, true, false)"
       />
     </div>
     <div>
@@ -22,11 +26,32 @@
         type="text"
         id="link"
         v-model="link"
+        :class="isLinkSelected && 'selected'"
+        @click="toggleSelection(false, false, true)"
       />
     </div>
     <button>Add Resource</button>
   </form>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isTitleSelected: false,
+      isDescriptionSelected: false,
+      isLinkSelected: false
+    }
+  },
+  methods: {
+    toggleSelection(isTitle, isDescription, isLink) {
+      this.isTitleSelected = isTitle
+      this.isDescriptionSelected = isDescription
+      this.isLinkSelected = isLink
+    }
+  }
+}
+</script>
 
 <style scoped>
 form {
@@ -82,7 +107,7 @@ button:hover {
   cursor: pointer;
 }
 
-#title {
+.selected {
   background-color: rgb(225, 201, 225)
 }
 </style>
