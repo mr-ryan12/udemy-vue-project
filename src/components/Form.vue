@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="handleSubmit">
     <div>
       <label for="title" class="title-label">Title</label>
       <input 
@@ -58,8 +58,19 @@ export default {
       this.isTitleSelected = isTitle
       this.isDescriptionSelected = isDescription
       this.isLinkSelected = isLink
+    },
+    handleSubmit() {
+      const newResource = {
+        id: Date.now(),
+        title: this.title,
+        description: this.description,
+        link: this.link
+      }
+      this.addResource(newResource)
+      this.toggleComponent('Resources')
     }
-  }
+  },
+  inject: ['addResource', 'toggleComponent']
 }
 </script>
 

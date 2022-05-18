@@ -19,7 +19,7 @@
       toggleSelection(isStoredButtonActive, isAddButtonActive, component) {
         this.storedButtonSelected = isStoredButtonActive
         this.addButtonSelected = isAddButtonActive
-        this.$emit('toggle-component', component)
+        this.toggleComponent(component)
       }
     },
     computed: {
@@ -29,7 +29,8 @@
       toggleAddButtonStyling() {
         return this.addButtonSelected ? 'selected' : 'not-selected'
       }
-    }
+    },
+    inject: ['toggleComponent']
   }
 </script>
 

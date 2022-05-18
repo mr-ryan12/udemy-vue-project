@@ -29,7 +29,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   margin: 0;
-  height: 12vh;
+  min-height: 12vh;
   padding: 15px;
   margin-bottom: 3vh;
   border-radius: 10px;
@@ -50,6 +50,7 @@ button {
 a {
   text-decoration: none;
   color: #ce5c00;
+  margin-top: 1vh;
 }
 
 a:hover {

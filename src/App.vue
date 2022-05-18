@@ -1,7 +1,7 @@
 <template>
   <section class="main-app">
     <Header />
-    <ResourcesMenu @toggle-component="toggleComponent" />
+    <ResourcesMenu/>
     <component :is="selectedComponent"></component>
   </section>
 </template>
@@ -41,11 +41,16 @@ export default {
   methods: {
     toggleComponent(component) {
       this.selectedComponent = component
+    },
+    addResource(resource) {
+      this.resources.unshift(resource)
     }
   },
   provide() {
     return {
-      resources: this.resources
+      resources: this.resources,
+      addResource: this.addResource,
+      toggleComponent: this.toggleComponent
     }
   }
 }
