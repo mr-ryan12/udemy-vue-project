@@ -3,6 +3,7 @@
     <Header />
     <ResourcesMenu @toggle-button-selection="toggleButtonSelection" :stored-button-selected="storedButtonSelected" :add-button-selected="addButtonSelected"/>
     <component :is="selectedComponent"></component>
+    <h2 v-if="!resources.length">This list is empty :(</h2>
   </section>
 </template>
 

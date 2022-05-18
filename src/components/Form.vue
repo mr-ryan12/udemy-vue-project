@@ -28,7 +28,7 @@
     <div>
       <label for="link">Link</label>
       <input 
-        type="text"
+        type="url"
         id="link"
         v-model="link"
         :class="isLinkSelected && 'selected'"
