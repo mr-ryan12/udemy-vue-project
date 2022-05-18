@@ -1,7 +1,9 @@
 <template>
-  <Header/>
-  <ResourcesMenu/>
-  <Resources/>
+  <section class="main-app">
+    <Header/>
+    <ResourcesMenu/>
+    <Resources :resources="resources"/>
+  </section>
 </template>
 
 <script>
@@ -40,8 +42,12 @@ export default {
 * {
   margin: 0;
 }
+
 #app {
   font-family: 'Roboto', sans-serif;
+}
+
+.main-app {
   display: flex;
   flex-direction: column;
   align-items: center;
