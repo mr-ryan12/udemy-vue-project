@@ -45,4 +45,19 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+
+button {
+  background: none;
+  border: none;
+  color: #3a0061;
+}
+
+a {
+  text-decoration: none;
+  color: #ce5c00;
+}
+
+a:hover {
+  color: #eda36a
+}
 </style>

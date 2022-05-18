@@ -37,7 +37,6 @@
   margin-top: 5vh;
   width: 40%;
   height: 5vh;
-  border: 1px solid black;
   padding: 10px;
   border-radius: 10px;
   border: none;
