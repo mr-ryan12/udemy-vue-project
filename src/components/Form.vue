@@ -75,5 +75,13 @@ label {
 
 button {
   align-self: left;
+  width: 20%;
+  height: 4vh;
+  background-color: #3a0061;
+  color: #FFF;
+}
+
+button:hover {
+  cursor: pointer;
 }
 </style>
