@@ -40,7 +40,6 @@ export default {
   height: 40%;
   width: 35%;
   background-color: #FFF;
-  /* line-height: 131px; */
   font-size: 16px;
   border-radius: 20px;
 }
@@ -72,5 +71,4 @@ button {
   font-size: 16px;
   border-radius: 10px;
 }
-
 </style>
