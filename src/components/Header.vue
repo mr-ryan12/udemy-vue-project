@@ -5,7 +5,7 @@
 <style scoped>
 h1 {
   width: 100vw;
-  height: 8vh;
+  min-height: 8vh;
   background-color: #640032;
   color: #FFF;
   display: flex;

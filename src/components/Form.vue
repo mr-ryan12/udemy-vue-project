@@ -67,10 +67,10 @@ export default {
         link: this.link
       }
       this.addResource(newResource)
-      this.toggleComponent('Resources')
+      this.resetButtonSelection(true, false, 'Resources')
     }
   },
-  inject: ['addResource', 'toggleComponent']
+  inject: ['addResource', 'toggleComponent', 'resetButtonSelection']
 }
 </script>
 

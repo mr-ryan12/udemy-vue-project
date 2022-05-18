@@ -1,7 +1,7 @@
 <template>
   <section class="main-app">
     <Header />
-    <ResourcesMenu/>
+    <ResourcesMenu @toggle-button-selection="toggleButtonSelection" :stored-button-selected="storedButtonSelected" :add-button-selected="addButtonSelected"/>
     <component :is="selectedComponent"></component>
   </section>
 </template>
@@ -35,7 +35,9 @@ export default {
           link: 'https://google.org/'
         }
       ],
-      selectedComponent: 'Resources'
+      selectedComponent: 'Resources',
+      storedButtonSelected: true,
+      addButtonSelected: false
     }
   },
   methods: {
@@ -44,13 +46,20 @@ export default {
     },
     addResource(resource) {
       this.resources.unshift(resource)
+    },
+    toggleButtonSelection(isStoredButtonActive, isAddButtonActive, component) {
+      this.storedButtonSelected = isStoredButtonActive
+      this.addButtonSelected = isAddButtonActive
+      this.toggleComponent(component)
+      console.log(this.storedButtonSelected)
     }
   },
   provide() {
     return {
       resources: this.resources,
       addResource: this.addResource,
-      toggleComponent: this.toggleComponent
+      toggleComponent: this.toggleComponent,
+      resetButtonSelection: this.toggleButtonSelection
     }
   }
 }

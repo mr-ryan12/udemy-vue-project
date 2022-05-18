@@ -9,17 +9,14 @@
 
 <script>
   export default {
-    data() {
-      return {
-        storedButtonSelected: true,
-        addButtonSelected: false
-      }
+    props: {
+      toggleButtonSelection: Function,
+      storedButtonSelected: Boolean,
+      addButtonSelected: Boolean
     },
     methods: {
       toggleSelection(isStoredButtonActive, isAddButtonActive, component) {
-        this.storedButtonSelected = isStoredButtonActive
-        this.addButtonSelected = isAddButtonActive
-        this.toggleComponent(component)
+        this.$emit('toggle-button-selection', isStoredButtonActive, isAddButtonActive, component)
       }
     },
     computed: {
