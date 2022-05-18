@@ -1,30 +1,48 @@
 <template>
   <section class="resource-cards-container">
     <section class="resource-card" v-for="resource in resources" :key="resource.id">
-      <!-- <h2>{{ resource.title }}</h2>
+      <section class="card-header">
+        <h2>{{ resource.title }}</h2>
+        <button>Delete</button>
+      </section>
       <br>
       <p>{{ resource.description }}</p>
-      <a :href="resource.link">View Resource</a> -->
-      <h1>{{resource.title}}</h1>
+      <a :href="resource.link">View Resource</a>
     </section>
   </section>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    resources: {
+      type: Array,
+      required: true
+    }
+  }
+}
 </script>
 
 <style>
 .resource-cards-container {
   margin-top: 5vh;
-  height: 7vh;
-  width: 40%;
-  background-color: red;
+  width: 41%;
 }
 
 .resource-card {
-  height: 4vh;
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  height: 12vh;
+  padding: 15px;
+  margin-bottom: 3vh;
+  border-radius: 10px;
+  box-shadow: 0.5px 1px 5px 1px grey;
+}
 
+.card-header {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
