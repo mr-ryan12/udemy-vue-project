@@ -1,7 +1,10 @@
 <template>
   <section class="main-app">
     <Header />
-    <ResourcesMenu @toggle-button-selection="toggleButtonSelection" :stored-button-selected="storedButtonSelected" :add-button-selected="addButtonSelected"/>
+    <ResourcesMenu
+      @toggle-button-selection="toggleButtonSelection" :stored-button-selected="storedButtonSelected"
+      :add-button-selected="addButtonSelected"
+    />
     <component :is="selectedComponent"></component>
   </section>
 </template>
