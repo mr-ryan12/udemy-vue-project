@@ -1,1 +1,1 @@
-Udemy project created to get practice with Vue.
+Udemy Vue project.
